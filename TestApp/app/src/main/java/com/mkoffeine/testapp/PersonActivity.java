@@ -2,8 +2,10 @@ package com.mkoffeine.testapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.mkoffeine.testapp.model.Person;
 
 public class PersonActivity extends AppCompatActivity {
@@ -32,6 +34,9 @@ public class PersonActivity extends AppCompatActivity {
         TextView placeOfBirth = (TextView) findViewById(R.id.txt_place_birth);
         placeOfBirth.setText(person.getPlaceOfBirthName());
 
+        ImageView image = (ImageView) findViewById(R.id.image);
+        Glide.with(this).load(person.getPortraitSrc())
+                .into(image);
 
     }
 }
