@@ -1,9 +1,11 @@
 package com.mkoffeine.testapp.model;
 
+import java.io.Serializable;
+
 /**
  * Created by mKoffeine on 04.08.2016.
  */
-public class Person {
+public class Person implements Serializable {//use implements Parcelable
     private String name;
     private String sex;
     private String portraitSrc;

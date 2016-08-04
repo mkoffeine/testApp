@@ -1,7 +1,8 @@
 package com.mkoffeine.testapp;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -32,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getBaseContext(), PersonActivity.class);
+                intent.putExtra(PersonActivity.PERSON_DATA, persons.get(i));//it's better not to use get(i)
+                startActivity(intent);
             }
         });
 
